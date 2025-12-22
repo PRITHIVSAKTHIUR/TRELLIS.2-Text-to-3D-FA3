@@ -8,6 +8,78 @@ from typing import *
 from datetime import datetime
 from pathlib import Path
 
+from typing import Iterable
+from gradio.themes import Soft
+from gradio.themes.utils import colors, fonts, sizes
+
+colors.orange_red = colors.Color(
+    name="orange_red",
+    c50="#FFF0E5",
+    c100="#FFE0CC",
+    c200="#FFC299",
+    c300="#FFA366",
+    c400="#FF8533",
+    c500="#FF4500",
+    c600="#E63E00",
+    c700="#CC3700",
+    c800="#B33000",
+    c900="#992900",
+    c950="#802200",
+)
+
+class OrangeRedTheme(Soft):
+    def __init__(
+        self,
+        *,
+        primary_hue: colors.Color | str = colors.gray,
+        secondary_hue: colors.Color | str = colors.orange_red,
+        neutral_hue: colors.Color | str = colors.slate,
+        text_size: sizes.Size | str = sizes.text_lg,
+        font: fonts.Font | str | Iterable[fonts.Font | str] = (
+            fonts.GoogleFont("Outfit"), "Arial", "sans-serif",
+        ),
+        font_mono: fonts.Font | str | Iterable[fonts.Font | str] = (
+            fonts.GoogleFont("IBM Plex Mono"), "ui-monospace", "monospace",
+        ),
+    ):
+        super().__init__(
+            primary_hue=primary_hue,
+            secondary_hue=secondary_hue,
+            neutral_hue=neutral_hue,
+            text_size=text_size,
+            font=font,
+            font_mono=font_mono,
+        )
+        super().set(
+            background_fill_primary="*primary_50",
+            background_fill_primary_dark="*primary_900",
+            body_background_fill="linear-gradient(135deg, *primary_200, *primary_100)",
+            body_background_fill_dark="linear-gradient(135deg, *primary_900, *primary_800)",
+            button_primary_text_color="white",
+            button_primary_text_color_hover="white",
+            button_primary_background_fill="linear-gradient(90deg, *secondary_500, *secondary_600)",
+            button_primary_background_fill_hover="linear-gradient(90deg, *secondary_600, *secondary_700)",
+            button_primary_background_fill_dark="linear-gradient(90deg, *secondary_600, *secondary_700)",
+            button_primary_background_fill_hover_dark="linear-gradient(90deg, *secondary_500, *secondary_600)",
+            button_secondary_text_color="black",
+            button_secondary_text_color_hover="white",
+            button_secondary_background_fill="linear-gradient(90deg, *primary_300, *primary_300)",
+            button_secondary_background_fill_hover="linear-gradient(90deg, *primary_400, *primary_400)",
+            button_secondary_background_fill_dark="linear-gradient(90deg, *primary_500, *primary_600)",
+            button_secondary_background_fill_hover_dark="linear-gradient(90deg, *primary_500, *primary_500)",
+            slider_color="*secondary_500",
+            slider_color_dark="*secondary_600",
+            block_title_text_weight="600",
+            block_border_width="3px",
+            block_shadow="*shadow_drop_lg",
+            button_primary_shadow="*shadow_drop_lg",
+            button_large_padding="11px",
+            color_accent_soft="*primary_100",
+            block_label_background_fill="*primary_200",
+        )
+
+orange_red_theme = OrangeRedTheme()
+
 os.environ["OPENCV_IO_ENABLE_OPENEXR"] = '1'
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 os.environ["ATTN_BACKEND"] = "flash_attn_3"
@@ -247,8 +319,8 @@ css="""
 if __name__ == "__main__":
     os.makedirs(TMP_DIR, exist_ok=True)
 
-    with gr.Blocks(delete_cache=(120, 120)) as demo:
-        gr.Markdown("## **TRELLIS.2 (Text-to-3D)**", elem_id="main-title")
+    with gr.Blocks(delete_cache=(300, 300)) as demo:
+        gr.Markdown("# **TRELLIS.2 (Text-to-3D)**", elem_id="main-title")
         gr.Markdown("""
         **Workflow:**
         Generate a 3D asset directly by converting Text-to-Image → 3D or Image-to-3D, powered by TRELLIS.2 and Z-Image-Turbo.
@@ -493,4 +565,4 @@ if __name__ == "__main__":
             outputs=[glb_output, download_btn],
         )
 
-    demo.launch(theme="bethecloud/storj_theme", css=css, mcp_server=True, ssr_mode=False, show_error=True)
+    demo.launch(theme=orange_red_theme, css=css, mcp_server=True, ssr_mode=False, show_error=True)
