@@ -2,6 +2,9 @@
 
 > A Gradio-based demonstration for Microsoft's TRELLIS.2-4B model, enabling text-to-3D and image-to-3D generation. The workflow generates 2D images via Tongyi-MAI/Z-Image-Turbo (text-to-image) or accepts direct uploads, then lifts them to textured 3D meshes exportable as GLB files. Supports advanced sampler controls for sparse structure, shape, and material stages, with preprocessing (background removal, cropping) for optimal results.
 
+> [!IMPORTANT]
+> Device Support and Testing (Hopper Architecture): NVIDIA H200, Kernel (Memory-Efficient): FlashAttention 3
+
 ## Features
 
 - **Text-to-Image-to-3D**: Enter prompts (e.g., "A realistic Cat 3D model") to auto-generate images via Z-Image-Turbo, then convert to 3D.
