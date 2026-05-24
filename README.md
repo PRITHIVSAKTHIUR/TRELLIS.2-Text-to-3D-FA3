@@ -138,7 +138,7 @@ Contributions encouraged! Fork the repo, enhance samplers or add workflows (e.g.
 - Custom preprocessors.
 - Batch generation.
 
-Repository: [https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D.git](https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D-FA3.git)
+Repository: [https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D-FA3.git](https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D-FA3.git)
 
 ## License
 
