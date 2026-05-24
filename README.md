@@ -29,8 +29,8 @@ https://github.com/user-attachments/assets/436cf082-b04f-4590-82e9-10b643b7118f
 
 1. Clone the repository:
    ```
-   git clone https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D.git
-   cd TRELLIS.2-Text-to-3D
+   git clone https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D-FA3.git
+   cd TRELLIS.2-Text-to-3D-FA3
    ```
 
 2. Install pre-requirements (for pip version):
@@ -135,7 +135,7 @@ Contributions encouraged! Fork the repo, enhance samplers or add workflows (e.g.
 - Custom preprocessors.
 - Batch generation.
 
-Repository: [https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D.git](https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D.git)
+Repository: [https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D.git](https://github.com/PRITHIVSAKTHIUR/TRELLIS.2-Text-to-3D-FA3.git)
 
 ## License
 
